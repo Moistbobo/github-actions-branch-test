@@ -1,0 +1,19 @@
+name: Branching test
+
+on:
+  push:
+    branches:
+      - 'CI-release/**'
+
+jobs:
+  deploy:
+    name: Branching test
+    runs-on: ubuntu-latest
+    container: reactnativecommunity/react-native-android
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: verify git tag exists
+        run: git describe --tags --abbrev=0
