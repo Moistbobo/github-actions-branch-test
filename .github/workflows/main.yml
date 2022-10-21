@@ -16,5 +16,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: fix git permissions
+        run: git config --global --add safe.directory /__w/github-actions-branch-test/github-actions-branch-test
+
       - name: verify git tag exists
         run: git describe --tags --abbrev=0
