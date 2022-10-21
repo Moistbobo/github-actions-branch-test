@@ -5,6 +5,7 @@ on:
     branches:
       - 'CI-release/**'
 
+
 jobs:
   deploy:
     name: Branching test
