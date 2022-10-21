@@ -2,7 +2,7 @@ name: Branching test
 
 on:
   release:
-    types: [published]
+    types: [published,prereleased]
 jobs:
   deploy:
     name: Branching test
