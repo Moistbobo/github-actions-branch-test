@@ -2,10 +2,10 @@ name: Branching test
 
 on:
   push:
-    branches:
-      - 'CI-release/**'
-
-
+    branches-ignore:
+      - 'main'
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+'
 jobs:
   deploy:
     name: Branching test
