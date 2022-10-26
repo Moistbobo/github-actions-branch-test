@@ -8,7 +8,7 @@ on:
       - synchronize
 jobs:
   main:
-    if:  startsWith(github.head_ref, 'l10n') == false && startsWith(github.head_ref, 'i10n')
+    if:  startsWith(github.head_ref, 'l10n') == false && startsWith(github.head_ref, 'i10n') == false
     runs-on: ubuntu-latest
     steps:
       - run: echo "$github.head_ref"
