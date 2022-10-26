@@ -1,0 +1,18 @@
+name: "Lint PR"
+
+on:
+  pull_request_target:
+    types:
+      - opened
+      - edited
+      - synchronize
+jobs:
+  main:
+    if: !startsWith(github.head_ref, 'l10n')
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "$github.head_ref"
+      - run: echo {{!startsWith(github.head_ref, 'l10n')}}
+      - uses: amannn/action-semantic-pull-request@v4.4.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
